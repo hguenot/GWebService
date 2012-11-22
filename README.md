@@ -31,7 +31,7 @@ The other thing to do : define a `GSoapServerAction`action in you controller.
 
 ```php
 
-class WsController extends CController {
+class MyController extends CController {
 
   public function actions() {
     return array(
@@ -68,7 +68,7 @@ $client = Yii::createComponent(array(
 ));
 
 // remote method parameters are passed as an array
-$client->call('WsController.sayHello', array('Web Service'));
+$client->call('MyController.sayHello', array('Web Service'));
 
 ```
 
@@ -80,7 +80,19 @@ Command line tools generates specific client based on wsdl description by defini
 protected/yiic wsdl http://your.domain.com/index.php?r=my/service
 ```
 
+This will generate class under `components` folder `MyControllerClient` having a method `sayHello` taking a string argument.
 
+```php
 
+class MyControllerClient extends GSoapClient {
 
+    public function sayHello($str) {
+        return $this->call('MyController.sayHello', array($str));
+    }
+
+}
+
+```
+
+Just instanciate new object and call `sayHello` method.
 

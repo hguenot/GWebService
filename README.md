@@ -13,6 +13,10 @@ It contains :
 
 ## Installation
 
+GWebService distribution contains 2 folders : 
+
+* `command` : Which contains 
+
 As many YII extension, you have to unzip archive under a subfolder of your extensions folder.
 
 __**Subfolder must be named GWebService.**__
@@ -75,3 +79,4 @@ $client->call('WsController.sayHello', array('Web Service'));
 
 ### GWebService command tool
 
+Web Service 

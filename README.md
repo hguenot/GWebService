@@ -15,13 +15,8 @@ It contains :
 
 GWebService distribution contains 2 folders : 
 
-* `command` : Which contains 
-
-As many YII extension, you have to unzip archive under a subfolder of your extensions folder.
-
-__**Subfolder must be named GWebService.**__
-
-For command line tool, you have to unzip archive under `commands` folder.
+* `command` : which contains command line tools. Copy it under commands
+* `extension` : which contains GWebService extension folder. Copy it under extensions folder.
 
 ## Usage
 
@@ -79,4 +74,13 @@ $client->call('WsController.sayHello', array('Web Service'));
 
 ### GWebService command tool
 
-Web Service 
+Command line tools generates specific client based on wsdl description by defining methods which map wsdl operation.
+
+```shell
+protected/yiic wsdl http://your.domain.com/index.php?r=my/service
+```
+
+
+
+
+

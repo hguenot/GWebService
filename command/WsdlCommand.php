@@ -186,7 +186,8 @@ EOD;
 			$operations = $wsdl->getOperations();
 			reset($operations);
 			if ($className === null)  {
-				$className = $this->first_element(".", current($operations)['name'])."Client";
+                $current = current($operations);
+				$className = $this->first_element(".", $current['name'])."Client";
 			}
 		}
 

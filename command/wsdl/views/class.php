@@ -76,7 +76,7 @@ foreach ($classes as $ns => $type) {
 <?php 
 		foreach ($type['elements'] as $name=>$def) {
 			$type = $def['type'];
-			if (isset($types[$def['type']]));
+			if (isset($types[$def['type']]))
 				$type = $types[$def['type']];
 			$type = str_replace('|array', '', $type);
 			echo " *     public $type \$$name;\r\n";
